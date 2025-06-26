@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Akkurat Mono";
+  src: url("/fonts/Akkurat.woff2") format("woff2"),
+    url("/fonts/Akkurat.woff") format("woff"),
+    url("/fonts/Akkurat.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +27,7 @@ img {
 
 p {
   text-transform: uppercase;
-  font-family: "Andrea Canolli 01", sans-serif;
+  font-family: "Akkurat Mono", monospace;
   font-size: 0.7rem;
 }
 
@@ -51,10 +61,14 @@ a {
   flex-direction: column;
   justify-content: center;
   gap: 2em;
+  line-height: 0.9;
 }
 
 .loader {
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0;
 }
 
@@ -73,6 +87,17 @@ a {
   color: #3a3a3a;
 }
 
+.projects,
+.locations {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center content horizontally */
+  gap: 1em;
+  text-align: left;
+}
+
 .projects-header,
 .project-item,
 .locations-header,
@@ -80,10 +105,15 @@ a {
   display: flex;
   gap: 2em;
   opacity: 0;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
 }
 
 .projects-header > *,
-.locations-header > * {
+.project-item > *,
+.locations-header > *,
+.location-item > * {
   flex: 1;
 }
 
@@ -217,4 +247,3 @@ nav > * {
   will-change: transform;
   margin-right: 0.1rem;
 }
-
